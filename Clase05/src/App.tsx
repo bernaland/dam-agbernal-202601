@@ -1,35 +1,31 @@
 import React from 'react';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
-import { CountScreen } from './components';
-import { colors } from './Themes';
+import { View } from 'react-native';
+import { CalculatorPad, CountScreen } from './components';
 import { appStyles } from './App.style';
 
 type AppProps = {
   attribute: string;
 };
+let count: number = 0;
+
+const handleOnPress = (value: number) => {
+  console.log('Button pressed!');
+  count += value;
+  console.log(`Current count: ${count}`);
+};
 
 export class App extends React.Component<AppProps> {
-  private count: number = 0;
-
-  handleOnPress = () => {
-    console.log('Button pressed!');
-    this.count++;
-    console.log(`Current count: ${this.count}`);
-  };
 
   render() {
+    console.log('Rendering App component');
+    const label = "Hello world!";
+    const name = "Hello world! x2";
     return (
-      <SafeAreaProvider>
-        <StatusBar barStyle='light-content' backgroundColor={colors.white} />
-        <SafeAreaProvider style={appStyles.safeArea}>
-          <View style={appStyles.container}>
-            <CountScreen label="Press" OnPress={this.handleOnPress} />
-          </View>
-        </SafeAreaProvider>
-      </SafeAreaProvider>
+      <View style={appStyles.safeArea}>
+        <View style={appStyles.container}>
+          <CalculatorPad />
+        </View>
+      </View>
     );
   };
 }

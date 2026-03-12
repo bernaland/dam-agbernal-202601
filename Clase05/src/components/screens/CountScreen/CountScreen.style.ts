@@ -8,7 +8,10 @@ export const stylesCountScreen = StyleSheet.create({
   },
   button: {
     backgroundColor: colors.primary[900],
-    padding: space.xxl,
+    padding: space.s,
     borderRadius: space.s,
+    margin: space.xs,
+    width: 60,
+    height: 60,
   },
 });
