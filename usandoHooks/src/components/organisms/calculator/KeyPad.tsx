@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { stylesKeyPad } from "./KeyPad.style";
-import { DisplayText, PadButton } from "../../molecules";
+import { PadButton } from "../../molecules";
 
 type KeyPadProps = {
     OnPressNumber: (value: number) => void; 
@@ -10,7 +10,6 @@ type KeyPadProps = {
 export const KeyPad: React.FC<KeyPadProps> = ({OnPressNumber, OnPressOperation}) => {
     return (
         <View style={stylesKeyPad.container}>
-            <DisplayText value="0" historyValue="" />
             <View style={stylesKeyPad.buttonRow}>
                 <PadButton label="C" OnPress={() => OnPressOperation("C")} />
                 <PadButton label="±" OnPress={() => OnPressOperation("±")} />
