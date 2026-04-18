@@ -6,6 +6,6 @@ export const stylesCalculator = StyleSheet.create({
     flexDirection: "column",
     flex: 1,
     justifyContent: "space-between",
-    padding: space.m,
+    // padding: space.m,
   }
 });

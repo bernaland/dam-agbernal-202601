@@ -11,7 +11,7 @@ export const stylesKeyPad = StyleSheet.create({
   container: {
     flexDirection: "column",
     flex: 1,
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     padding: space.m,
   }
 });

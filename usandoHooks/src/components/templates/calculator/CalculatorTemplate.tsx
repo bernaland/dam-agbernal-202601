@@ -6,19 +6,16 @@ import { KeyPad } from "../../organisms";
 type CalculatorTemplateProps = {
     currentValue: string;
     historyValue: string;
+    showHistory?: boolean;
     NumberOnHandle: (value: number) => void;
     OperationOnHandle: (operation: string) => void;
 };
 
-export const CalculatorTemplate: React.FC<CalculatorTemplateProps> = ({ currentValue, historyValue, NumberOnHandle, OperationOnHandle }) => {
+export const CalculatorTemplate: React.FC<CalculatorTemplateProps> = ({ currentValue, historyValue, showHistory, NumberOnHandle, OperationOnHandle }) => {
     return (
         <View style={stylesCalculator.container}>
-            <View>
-                <DisplayText value={currentValue} historyValue={historyValue} />
-            </View>
-            <View>
-                <KeyPad OnPressNumber={NumberOnHandle} OnPressOperation={OperationOnHandle} />
-            </View>
+            <DisplayText value={currentValue} historyValue={historyValue} showHistory={showHistory} />
+            <KeyPad OnPressNumber={NumberOnHandle} OnPressOperation={OperationOnHandle} />
         </View>
     );
 };

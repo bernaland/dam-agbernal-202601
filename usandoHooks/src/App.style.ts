@@ -10,5 +10,6 @@ export const appStyles = StyleSheet.create({
     },
     container: {
         height: space.xxxl,
+        flex: 1,
     }
 });
